@@ -7,8 +7,8 @@
 // HOW TO EDIT: replace the two placeholder strings below with your own values from
 // Supabase Dashboard -> Project Settings -> API.
 
-export const SUPABASE_URL = "https://YOUR-PROJECT-REF.supabase.co";
-export const SUPABASE_PUBLISHABLE_KEY = "YOUR-PUBLISHABLE-KEY";
+export const SUPABASE_URL = "https://vywzqndjcggejgvzraul.supabase.co";
+export const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_AznMu3N1ky4GL5Cb60RqsA_tWv4WCRN";
 
 // Edge Function base URL (derived from the project URL).
 export const FUNCTIONS_URL = `${SUPABASE_URL}/functions/v1`;
