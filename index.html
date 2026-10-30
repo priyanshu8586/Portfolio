@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Priyanshu Kumar | Aspiring Web Developer</title>
+  <meta name="description" content="Portfolio of Priyanshu Kumar, an aspiring web developer learning to build modern, responsive websites." />
+  <meta name="theme-color" content="#0b1020" />
+  <link rel="stylesheet" href="style.css" />
+  <script type="module" src="main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#home">Priyanshu<span>.</span></a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero container" id="home" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <p class="eyebrow">Aspiring Web Developer</p>
+        <h1 id="hero-title">Hi, I'm <span class="accent">Priyanshu Kumar</span></h1>
+        <p class="lead">I'm learning to build modern, responsive websites and turning ideas into real projects.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">View My Projects</a>
+          <a class="btn btn-ghost" href="#contact">Contact Me</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <!-- Replace this placeholder with your photo:
+             <img src="assets/images/profile.jpg" alt="Photo of Priyanshu Kumar" /> -->
+        <div class="avatar-placeholder"><span>PK</span></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section container" id="about" aria-labelledby="about-title">
+      <h2 id="about-title" class="section-title">About Me</h2>
+      <div class="about-card reveal">
+        <p>
+          I'm a beginner web developer learning HTML, CSS, and JavaScript. I enjoy building small,
+          practical projects to improve my skills, and I'm learning how to use Git and GitHub to
+          manage and publish my work.
+        </p>
+        <p>
+          My goal is to keep learning, build useful websites, and grow step by step.
+          <!-- EDIT: add more about yourself here, keeping it honest and simple. -->
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section container" id="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title" class="section-title">Skills</h2>
+      <ul class="grid skills-grid">
+        <li class="card reveal">
+          <h3>HTML5</h3>
+          <span class="badge">Beginner</span>
+          <p>Writing semantic, accessible page structure.</p>
+        </li>
+        <li class="card reveal">
+          <h3>CSS3</h3>
+          <span class="badge learning">Currently learning</span>
+          <p>Layouts, styling, and responsive design basics.</p>
+        </li>
+        <li class="card reveal">
+          <h3>JavaScript</h3>
+          <span class="badge learning">Currently learning</span>
+          <p>Adding interactivity and working with the DOM.</p>
+        </li>
+        <li class="card reveal">
+          <h3>Responsive Web Design</h3>
+          <span class="badge learning">Currently learning</span>
+          <p>Making pages work well on phones, tablets, and desktops.</p>
+        </li>
+        <li class="card reveal">
+          <h3>Git and GitHub</h3>
+          <span class="badge learning">Currently learning</span>
+          <p>Version control and publishing projects.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section container" id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title" class="section-title">Projects</h2>
+      <p class="section-sub">These are editable placeholders. Replace them with your real projects.</p>
+      <div class="grid projects-grid" id="projectsGrid">
+        <!-- PROJECT CARD TEMPLATE: copy this block for each new project -->
+        <article class="card project reveal">
+          <h3>Project Title (placeholder)</h3>
+          <p>Short description of what this project is and what you learned building it.</p>
+          <ul class="tags" aria-label="Technologies used">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li>
+          </ul>
+          <div class="project-links">
+            <a href="#" class="link" aria-disabled="true" data-placeholder>GitHub Repository</a>
+            <a href="#" class="link" aria-disabled="true" data-placeholder>Live Demo</a>
+          </div>
+        </article>
+        <article class="card project reveal">
+          <h3>Another Project (placeholder)</h3>
+          <p>Add a description of your next project here.</p>
+          <ul class="tags" aria-label="Technologies used">
+            <li>HTML</li><li>CSS</li>
+          </ul>
+          <div class="project-links">
+            <a href="#" class="link" aria-disabled="true" data-placeholder>GitHub Repository</a>
+            <a href="#" class="link" aria-disabled="true" data-placeholder>Live Demo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section container" id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="section-title">Contact</h2>
+      <p class="section-sub">Have a question or an idea? Send me a message.</p>
+
+      <form class="contact-form card" id="contactForm" novalidate>
+        <div class="field">
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" maxlength="100" autocomplete="name" required aria-describedby="name-error" />
+          <p class="error" id="name-error" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" maxlength="254" autocomplete="email" required aria-describedby="email-error" />
+          <p class="error" id="email-error" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" maxlength="150" required aria-describedby="subject-error" />
+          <p class="error" id="subject-error" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" maxlength="2000" required aria-describedby="message-error message-count"></textarea>
+          <div class="field-foot">
+            <p class="error" id="message-error" role="alert"></p>
+            <p class="counter" id="message-count" aria-live="off">0 / 2000</p>
+          </div>
+        </div>
+
+        <!-- Honeypot field: hidden from humans, bots tend to fill it in -->
+        <div class="hp" aria-hidden="true">
+          <label for="website">Leave this field empty</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <button class="btn btn-primary" type="submit" id="submitBtn">
+          <span class="btn-label">Send Message</span>
+          <span class="spinner" aria-hidden="true"></span>
+        </button>
+
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        <p class="privacy">
+          Your name, email, and message are used only to reply to you. They are stored securely
+          and never shown publicly.
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year">2026</span> Priyanshu Kumar. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="#" data-placeholder aria-disabled="true">GitHub</a></li>
+        <li><a href="#" data-placeholder aria-disabled="true">LinkedIn</a></li>
+        <li><a href="#top">Back to top &uarr;</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
