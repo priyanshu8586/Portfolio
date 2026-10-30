@@ -9,9 +9,9 @@ A simple, responsive personal portfolio built with HTML, CSS and JavaScript, hos
 | Part | Status |
 |------|--------|
 | Public website (home, about, skills, projects, contact form UI) | Built |
-| Contact form backend (Supabase) | Not set up yet |
-| Admin dashboard | Not built yet |
-| Google Drive backup | Not built yet |
+| Contact form backend (Supabase) | Built |
+| Admin dashboard | Built |
+| Google Drive backup | Built |
 
 Until the backend is set up, the contact form will show "The contact form is not configured yet." This is expected.
 
