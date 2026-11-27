@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin sign in</title>
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <script src="/assets/js/theme.js"></script>
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/admin.css">
+</head>
+<body class="login-body">
+  <main class="login-card" id="main">
+    <div class="brand-mark big" aria-hidden="true">P</div>
+    <h1>Admin sign in</h1>
+    <p class="muted">Private area. Authorised use only.</p>
+
+    <form id="login-form" novalidate>
+      <div id="login-notice" class="notice is-error" role="alert" hidden></div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input class="input" id="email" name="email" type="email" autocomplete="username" required autofocus>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input class="input" id="password" name="password" type="password" autocomplete="current-password" required>
+      </div>
+
+      <button class="btn btn-primary" id="login-btn" type="submit">Sign in</button>
+    </form>
+    <p class="muted small"><a href="/">← Back to the portfolio</a></p>
+  </main>
+  <script type="module" src="/assets/js/admin-login.js"></script>
+</body>
+</html>

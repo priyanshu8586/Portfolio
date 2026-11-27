@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Priyanshu Kumar — Portfolio</title>
+  <meta name="description" content="Personal portfolio: projects, about me and a way to get in touch.">
+  <meta name="theme-color" content="#0a0c10">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <script src="/assets/js/theme.js"></script>
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Home">
+        <span class="brand-mark" aria-hidden="true">P</span>
+        <span class="brand-name" data-profile="name">Priyanshu Kumar</span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch colour theme">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <p class="eyebrow">Portfolio</p>
+        <h1 class="hero-title">
+          Hi, I’m <span class="gradient-text" data-profile="name">Priyanshu Kumar</span>.
+        </h1>
+        <p class="hero-sub" data-profile="headline">Web developer in the making</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#projects">See my work</a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+        <ul class="chips" aria-label="Technologies">
+          <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Node.js</li><li>PostgreSQL</li><li>Git &amp; GitHub</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow">About</p>
+          <h2 id="about-title" class="section-title">A little about me</h2>
+        </div>
+        <div class="about-body">
+          <p data-profile="bio">Loading…</p>
+          <ul class="link-row" id="social-links" hidden></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <p class="eyebrow">Selected work</p>
+        <h2 id="projects-title" class="section-title">Projects</h2>
+        <div id="projects-status" class="status-line" role="status">Loading projects…</div>
+        <ul class="project-grid" id="project-grid"></ul>
+      </div>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title" class="section-title">Let’s talk</h2>
+          <p class="lead">Have a project, an opportunity or just a question? Send a message and I’ll reply by email.</p>
+        </div>
+
+        <form class="contact-form" id="contact-form" novalidate>
+          <div id="form-notice" class="notice" role="status" aria-live="polite" hidden></div>
+
+          <div class="field">
+            <label for="c-name">Name</label>
+            <input class="input" id="c-name" name="name" type="text" autocomplete="name" maxlength="100" required aria-describedby="e-name">
+            <p class="field-error" id="e-name"></p>
+          </div>
+
+          <div class="field">
+            <label for="c-email">Email</label>
+            <input class="input" id="c-email" name="email" type="email" autocomplete="email" maxlength="254" required aria-describedby="e-email">
+            <p class="field-error" id="e-email"></p>
+          </div>
+
+          <div class="field">
+            <label for="c-subject">Subject <span class="hint">(optional)</span></label>
+            <input class="input" id="c-subject" name="subject" type="text" maxlength="150" aria-describedby="e-subject">
+            <p class="field-error" id="e-subject"></p>
+          </div>
+
+          <div class="field">
+            <label for="c-message">Message</label>
+            <textarea class="textarea" id="c-message" name="message" maxlength="5000" required aria-describedby="e-message"></textarea>
+            <p class="field-error" id="e-message"></p>
+          </div>
+
+          <!-- Honeypot: hidden from people, tempting for bots -->
+          <div class="hp" aria-hidden="true">
+            <label for="c-website">Leave this field empty</label>
+            <input id="c-website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <button class="btn btn-primary" id="send-btn" type="submit">Send message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> <span data-profile="name">Priyanshu Kumar</span></p>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script type="module" src="/assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin dashboard</title>
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <script src="/assets/js/theme.js"></script>
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/admin.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="admin-header">
+    <div class="admin-header-inner">
+      <strong class="admin-title">Dashboard</strong>
+      <div class="admin-header-right">
+        <span class="muted small" id="who"></span>
+        <a class="btn btn-sm" href="/" target="_blank" rel="noopener">View site</a>
+        <button class="btn btn-sm" id="logout-btn" type="button">Sign out</button>
+      </div>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="Dashboard sections">
+      <button role="tab" id="tab-overview" aria-controls="panel-overview" aria-selected="true" data-view="overview">Overview</button>
+      <button role="tab" id="tab-messages" aria-controls="panel-messages" aria-selected="false" tabindex="-1" data-view="messages">Messages <span class="count" id="unread-count" hidden></span></button>
+      <button role="tab" id="tab-projects" aria-controls="panel-projects" aria-selected="false" tabindex="-1" data-view="projects">Projects</button>
+      <button role="tab" id="tab-profile" aria-controls="panel-profile" aria-selected="false" tabindex="-1" data-view="profile">Profile</button>
+      <button role="tab" id="tab-security" aria-controls="panel-security" aria-selected="false" tabindex="-1" data-view="security">Security</button>
+    </nav>
+  </header>
+
+  <main id="main" class="admin-main">
+    <div id="global-notice" class="notice" role="status" aria-live="polite" hidden></div>
+
+    <!-- Overview -->
+    <section id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
+      <h1 class="panel-title">Overview</h1>
+      <div class="stat-grid" id="stat-grid"></div>
+    </section>
+
+    <!-- Messages -->
+    <section id="panel-messages" role="tabpanel" aria-labelledby="tab-messages" hidden>
+      <div class="panel-head">
+        <h1 class="panel-title">Messages</h1>
+        <div class="filter" role="group" aria-label="Filter messages">
+          <button class="btn btn-sm is-active" data-filter="" aria-pressed="true">Inbox</button>
+          <button class="btn btn-sm" data-filter="unread" aria-pressed="false">Unread</button>
+          <button class="btn btn-sm" data-filter="read" aria-pressed="false">Read</button>
+          <button class="btn btn-sm" data-filter="archived" aria-pressed="false">Archived</button>
+        </div>
+      </div>
+      <div id="messages-status" class="muted" role="status"></div>
+      <ul class="message-list" id="message-list"></ul>
+      <div class="pager" id="message-pager" hidden>
+        <button class="btn btn-sm" id="prev-page" type="button">← Newer</button>
+        <span class="muted small" id="page-label"></span>
+        <button class="btn btn-sm" id="next-page" type="button">Older →</button>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="panel-projects" role="tabpanel" aria-labelledby="tab-projects" hidden>
+      <div class="panel-head">
+        <h1 class="panel-title">Projects</h1>
+        <button class="btn btn-primary btn-sm" id="new-project" type="button">+ New project</button>
+      </div>
+      <div id="projects-status" class="muted" role="status"></div>
+      <ul class="project-rows" id="project-rows"></ul>
+    </section>
+
+    <!-- Profile -->
+    <section id="panel-profile" role="tabpanel" aria-labelledby="tab-profile" hidden>
+      <h1 class="panel-title">Profile</h1>
+      <p class="muted">This text appears on the public homepage.</p>
+      <form class="card form-grid" id="profile-form" novalidate>
+        <div class="field"><label for="p-name">Name</label><input class="input" id="p-name" name="name" maxlength="80" required><p class="field-error" id="pe-name"></p></div>
+        <div class="field"><label for="p-headline">Headline</label><input class="input" id="p-headline" name="headline" maxlength="120"><p class="field-error" id="pe-headline"></p></div>
+        <div class="field"><label for="p-bio">About me</label><textarea class="textarea" id="p-bio" name="bio" maxlength="1000"></textarea><p class="field-error" id="pe-bio"></p></div>
+        <div class="field"><label for="p-github">GitHub URL <span class="hint">(optional)</span></label><input class="input" id="p-github" name="github" type="url" maxlength="300" placeholder="https://github.com/your-name"><p class="field-error" id="pe-github"></p></div>
+        <div class="field"><label for="p-linkedin">LinkedIn URL <span class="hint">(optional)</span></label><input class="input" id="p-linkedin" name="linkedin" type="url" maxlength="300" placeholder="https://www.linkedin.com/in/your-name"><p class="field-error" id="pe-linkedin"></p></div>
+        <button class="btn btn-primary" type="submit">Save profile</button>
+      </form>
+    </section>
+
+    <!-- Security -->
+    <section id="panel-security" role="tabpanel" aria-labelledby="tab-security" hidden>
+      <h1 class="panel-title">Security</h1>
+      <p class="muted">Changing your password signs out all your other sessions.</p>
+      <form class="card form-grid" id="password-form" novalidate>
+        <input type="text" name="username" autocomplete="username" class="sr-only" tabindex="-1" aria-hidden="true" id="pw-username">
+        <div class="field"><label for="pw-current">Current password</label><input class="input" id="pw-current" name="currentPassword" type="password" autocomplete="current-password" required><p class="field-error" id="pwe-currentPassword"></p></div>
+        <div class="field"><label for="pw-new">New password <span class="hint">(at least 12 characters)</span></label><input class="input" id="pw-new" name="newPassword" type="password" autocomplete="new-password" minlength="12" required><p class="field-error" id="pwe-newPassword"></p></div>
+        <button class="btn btn-primary" type="submit">Change password</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Project editor -->
+  <dialog id="project-dialog" aria-labelledby="project-dialog-title">
+    <form id="project-form" method="dialog" novalidate>
+      <h2 id="project-dialog-title">New project</h2>
+      <div id="project-notice" class="notice is-error" role="alert" hidden></div>
+      <div class="field"><label for="pj-title">Title</label><input class="input" id="pj-title" name="title" maxlength="100" required><p class="field-error" id="pje-title"></p></div>
+      <div class="field"><label for="pj-summary">Summary</label><textarea class="textarea short" id="pj-summary" name="summary" maxlength="500" required></textarea><p class="field-error" id="pje-summary"></p></div>
+      <div class="field"><label for="pj-tags">Tags <span class="hint">(comma separated, max 10)</span></label><input class="input" id="pj-tags" name="tags" placeholder="HTML, CSS, JavaScript"><p class="field-error" id="pje-tags"></p></div>
+      <div class="field"><label for="pj-live">Live URL <span class="hint">(optional)</span></label><input class="input" id="pj-live" name="live_url" type="url" maxlength="300"><p class="field-error" id="pje-live_url"></p></div>
+      <div class="field"><label for="pj-repo">Repository URL <span class="hint">(optional)</span></label><input class="input" id="pj-repo" name="repo_url" type="url" maxlength="300"><p class="field-error" id="pje-repo_url"></p></div>
+      <div class="field"><label for="pj-order">Sort order <span class="hint">(lower shows first)</span></label><input class="input" id="pj-order" name="sort_order" type="number" min="0" max="10000" value="0"><p class="field-error" id="pje-sort_order"></p></div>
+      <label class="check"><input type="checkbox" name="is_published" checked> Published on the public site</label>
+      <div class="dialog-actions">
+        <button class="btn" type="button" id="project-cancel">Cancel</button>
+        <button class="btn btn-primary" type="submit" id="project-save">Save project</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="/assets/js/admin-dashboard.js"></script>
+</body>
+</html>
